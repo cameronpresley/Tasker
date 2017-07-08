@@ -12,8 +12,11 @@ namespace Tasker
                 case "add":
                 case "1":
                     return UserCommand.AddTask;
-                case "quit":
+                case "move":
                 case "2":
+                    return UserCommand.MoveTask;
+                case "3":
+                case "quit":
                     return UserCommand.Quit;
                 default:
                     return UserCommand.Unknown;

@@ -46,6 +46,7 @@
     <Compile Include="Add\AddPresenter.cs" />
     <Compile Include="Add\AddView.cs" />
     <Compile Include="InputToUserCommandConverter.cs" />
+    <Compile Include="Move\MovePresenter.cs" />
     <Compile Include="UserCommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

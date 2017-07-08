@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tasker.Add;
 using Tasker.DataAccess;
+using Tasker.Move;
 
 namespace Tasker
 {
@@ -13,6 +14,7 @@ namespace Tasker
         static void Main(string[] args)
         {
             var addPresenter = new AddPresenter(new TaskRepository());
+            var movePresenter = new MovePresenter();
             UserCommand command;
             do
             {
@@ -22,6 +24,9 @@ namespace Tasker
                 {
                     case UserCommand.AddTask:
                         addPresenter.Execute();
+                        break;
+                    case UserCommand.MoveTask:
+                        movePresenter.Execute();
                         break;
                     case UserCommand.Quit:
                         break;
@@ -43,9 +48,18 @@ namespace Tasker
 
         private static void PrintOptions()
         {
+            var options = new List<string>
+            {
+                "Add a task",
+                "Move task",
+                "Quit"
+            };
+
             Console.WriteLine("What would you like to do?");
-            Console.WriteLine("1). Add a task");
-            Console.WriteLine("2). Quit");
+            for (var i = 0; i < options.Count; i++)
+            {
+                Console.WriteLine($"{i+1}). {options[i]}");
+            }
         }
     }
 }

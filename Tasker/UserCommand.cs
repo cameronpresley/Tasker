@@ -10,6 +10,7 @@ namespace Tasker
     {
         AddTask,
         Quit,
-        Unknown
+        MoveTask,
+        Unknown,
     }
 }
