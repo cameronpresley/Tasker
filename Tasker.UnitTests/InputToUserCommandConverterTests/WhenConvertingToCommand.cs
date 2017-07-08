@@ -30,6 +30,16 @@ namespace Tasker.UnitTests.InputToUserCommandConverterTests
             Assert.AreEqual(UserCommand.AddTask, result);
         }
 
+        [TestCase("move")]
+        [TestCase("MOVE")]
+        [TestCase("MoVe")]
+        public void AndTheInputIsMoveThenMoveTaskIsReturned(string move)
+        {
+            var result = InputToUserCommandConverter.Convert(move);
+
+            Assert.AreEqual(UserCommand.MoveTask, result);
+        }
+
         [TestCase("quit")]
         [TestCase("Quit")]
         [TestCase("QUIT")]
@@ -49,9 +59,17 @@ namespace Tasker.UnitTests.InputToUserCommandConverterTests
         }
 
         [Test]
-        public void AndTheInputIs2ThenQuitIsReturned()
+        public void AndTheInputIs2ThenMoveTaskIsReturned()
         {
             var result = InputToUserCommandConverter.Convert("2");
+
+            Assert.AreEqual(UserCommand.MoveTask, result);
+        }
+
+        [Test]
+        public void AndTheInputIs3ThenQuitIsReturned()
+        {
+            var result = InputToUserCommandConverter.Convert("3");
 
             Assert.AreEqual(UserCommand.Quit, result);
         }
