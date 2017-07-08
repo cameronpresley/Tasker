@@ -13,8 +13,9 @@ namespace Tasker
     {
         static void Main(string[] args)
         {
-            var addPresenter = new AddPresenter(new TaskRepository());
-            var movePresenter = new MovePresenter();
+            var taskRepo = new TaskRepository();
+            var addPresenter = new AddPresenter(taskRepo);
+            var movePresenter = new MovePresenter(taskRepo);
             UserCommand command;
             do
             {

@@ -19,6 +19,19 @@ namespace Tasker.DataAccess
             return record;
         }
 
+        public IEnumerable<Task> GetAll()
+        {
+            return new List<Task>(_tasks);
+        }
+
+        public void Update(Task record)
+        {
+            if (!_tasks.Any(x => x.Id == record.Id)) return;
+
+            var index = _tasks.FindIndex(x => x.Id == record.Id);
+            _tasks[index] = record;
+        }
+
         private int CalculateId()
         {
             if (!_tasks.Any()) return 0;

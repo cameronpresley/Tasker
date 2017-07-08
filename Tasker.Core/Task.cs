@@ -6,18 +6,9 @@ namespace Tasker.Core
     {
         public string Title { get; }
         public string Description { get; }
-        public TaskStatus Status { get; }
+        public TaskStatus Status { get; set; }
 
-        private int _id;
-        public int Id
-        {
-            get => _id;
-            set
-            {
-                if (value != _id && _id != -1)
-                    _id = value;
-            }
-        }
+        public int Id { get; set; }
 
         private Task(int id, string title, string description, TaskStatus status)
         {
