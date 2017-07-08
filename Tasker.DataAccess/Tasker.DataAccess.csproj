@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5A625BAD-A7D0-4417-A454-1C2F434ACB65}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Tasker</RootNamespace>
-    <AssemblyName>Tasker</AssemblyName>
+    <ProjectGuid>{32A834A4-5C98-4B1A-82EC-6545D5534EA2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tasker.DataAccess</RootNamespace>
+    <AssemblyName>Tasker.DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,25 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add\AddModel.cs" />
-    <Compile Include="Add\AddPresenter.cs" />
-    <Compile Include="Add\AddView.cs" />
-    <Compile Include="InputToUserCommandConverter.cs" />
-    <Compile Include="UserCommand.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="TaskRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tasker.Core\Tasker.Core.csproj">
       <Project>{564e76fc-d536-4f3f-8dea-6d41b59e0fbd}</Project>
       <Name>Tasker.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tasker.DataAccess\Tasker.DataAccess.csproj">
-      <Project>{32a834a4-5c98-4b1a-82ec-6545d5534ea2}</Project>
-      <Name>Tasker.DataAccess</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
