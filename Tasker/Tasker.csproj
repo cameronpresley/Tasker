@@ -45,6 +45,9 @@
     <Compile Include="Add\AddModel.cs" />
     <Compile Include="Add\AddPresenter.cs" />
     <Compile Include="Add\AddView.cs" />
+    <Compile Include="CommonUI\TaskModel.cs" />
+    <Compile Include="CommonUI\TaskPresenter.cs" />
+    <Compile Include="CommonUI\TaskView.cs" />
     <Compile Include="InputToUserCommandConverter.cs" />
     <Compile Include="UserCommand.cs" />
     <Compile Include="Program.cs" />

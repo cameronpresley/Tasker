@@ -19,6 +19,11 @@ namespace Tasker.DataAccess
             return record;
         }
 
+        public IEnumerable<Task> GetAll()
+        {
+            return new List<Task>(_tasks);
+        }
+
         private int CalculateId()
         {
             if (!_tasks.Any()) return 0;

@@ -9,6 +9,7 @@ namespace Tasker
     public enum UserCommand
     {
         AddTask,
+        ShowTasks,
         Quit,
         Unknown
     }
