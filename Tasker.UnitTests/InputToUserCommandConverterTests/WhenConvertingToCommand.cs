@@ -49,9 +49,17 @@ namespace Tasker.UnitTests.InputToUserCommandConverterTests
         }
 
         [Test]
-        public void AndTheInputIs2ThenQuitIsReturned()
+        public void AndTheInputIs2ThenShowIsReturned()
         {
             var result = InputToUserCommandConverter.Convert("2");
+
+            Assert.AreEqual(UserCommand.ShowTasks, result);
+        }
+
+        [Test]
+        public void AndTheInputIs3ThenQuitIsReturned()
+        {
+            var result = InputToUserCommandConverter.Convert("3");
 
             Assert.AreEqual(UserCommand.Quit, result);
         }

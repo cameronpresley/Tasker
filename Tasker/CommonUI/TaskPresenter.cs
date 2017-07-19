@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Task = Tasker.Core.Task;
 
@@ -8,7 +9,7 @@ namespace Tasker.CommonUI
     {
         public const int MaxToShowOnScreen = 10;
         private readonly List<Task> _tasks;
-        private readonly int _numberOfPages;
+        public readonly int NumberOfPages;
 
         public Task SelectedTask { get; private set; }
 
@@ -28,8 +29,9 @@ namespace Tasker.CommonUI
 
         public TaskPresenter(List<Task> tasks)
         {
-            _tasks = tasks;
-            _numberOfPages = CalculateNumberOfPages();
+            _tasks = tasks ?? throw new ArgumentNullException(nameof(tasks));
+            NumberOfPages = CalculateNumberOfPages();
+            CurrentPage = 0;
         }
 
         private int CalculateNumberOfPages()
@@ -41,7 +43,7 @@ namespace Tasker.CommonUI
 
         public void MoreCommand()
         {
-            if (CurrentPage < _numberOfPages)
+            if (CurrentPage < NumberOfPages)
                 CurrentPage++;
         }
 
