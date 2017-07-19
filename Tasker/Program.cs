@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Tasker.Add;
 using Tasker.CommonUI;
 using Tasker.DataAccess;
@@ -36,6 +33,7 @@ namespace Tasker
                         var view = new TaskView(presenter);
                         view.Display();
                         var selection = presenter.SelectedTask;
+                        Console.WriteLine($"Task selected was {selection.Id} with a title of {selection.Title}");
                         break;
                     case UserCommand.Quit:
                         break;
